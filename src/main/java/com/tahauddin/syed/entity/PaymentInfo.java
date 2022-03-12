@@ -17,7 +17,6 @@ import javax.validation.constraints.NotBlank;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Valid
 @Entity
 @Table(name="PAYMENT_INFO_TABLE")
 public class  PaymentInfo {

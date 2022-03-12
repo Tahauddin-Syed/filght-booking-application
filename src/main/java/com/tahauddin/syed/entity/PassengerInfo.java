@@ -20,7 +20,6 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Valid
 @Entity
 @Table(name="PASSENGER_INFO_TABLE")
 public class PassengerInfo {
