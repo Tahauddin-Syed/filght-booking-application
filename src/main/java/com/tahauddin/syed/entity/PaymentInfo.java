@@ -10,15 +10,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Valid
 @Entity
 @Table(name="PAYMENT_INFO_TABLE")
-public class PaymentInfo {
+public class  PaymentInfo {
 
     @Id
     @GeneratedValue(generator = "paymentId")

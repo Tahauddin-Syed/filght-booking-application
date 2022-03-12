@@ -24,12 +24,9 @@ public class FlightBookingController {
     @PostMapping("/book/flight")
     public ResponseEntity<FlightBookingDTO> bookFlightTickets(
             @Valid @RequestBody FlightBookingRequest flightBookingRequest) throws Exception {
-        try{
+
             FlightBookingDTO flightBookingDTO = flightBookingService.bookFlight(flightBookingRequest);
             return new ResponseEntity<>(flightBookingDTO, HttpStatus.CREATED);
-        } catch (MethodArgumentNotValidException e) {
-            throw e;
-        }
     }
 
 }
