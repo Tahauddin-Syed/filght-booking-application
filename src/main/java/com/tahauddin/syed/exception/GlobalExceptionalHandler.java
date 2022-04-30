@@ -28,7 +28,7 @@ public class GlobalExceptionalHandler {
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(ConstraintViolationException.class)
-    public ResponseEntity<List> handleConstraintViolationException(ConstraintViolationException ex) {
+    public ResponseEntity<List<String>> handleConstraintViolationException(ConstraintViolationException ex) {
         List<String> errors = new ArrayList<>();
 
         ex.getConstraintViolations().forEach(
@@ -36,7 +36,7 @@ public class GlobalExceptionalHandler {
                         errors.add(constraintViolation.getPropertyPath() +
                                 " " + constraintViolation.getMessage()));
 
-        return new ResponseEntity(errors, HttpStatus.BAD_REQUEST);
+        return ResponseEntity.badRequest().body(errors);
     }
 
 

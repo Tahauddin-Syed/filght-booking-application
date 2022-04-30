@@ -7,7 +7,6 @@ import com.tahauddin.syed.repo.PaymentInfoRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.MethodArgumentNotValidException;
 
 import java.util.UUID;
 
@@ -21,7 +20,7 @@ public class FlightBookingService {
     private PaymentInfoRepo paymentInfoRepo;
 
     @Transactional
-    public FlightBookingDTO bookFlight( FlightBookingRequest flightBookingRequest) throws MethodArgumentNotValidException {
+    public FlightBookingDTO bookFlight( FlightBookingRequest flightBookingRequest)  {
 
         passengerInfoRepo.save(flightBookingRequest.getPassengerInfo());
         paymentInfoRepo.save(flightBookingRequest.getPaymentInfo());
