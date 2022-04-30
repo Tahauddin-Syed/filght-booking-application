@@ -10,8 +10,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
+import java.math.BigDecimal;
 
 @Data
 @AllArgsConstructor
@@ -36,6 +36,4 @@ public class  PaymentInfo {
     private String cardType;
 
     private Long passengerId;
-
-
 }
