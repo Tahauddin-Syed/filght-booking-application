@@ -20,7 +20,7 @@ public class FlightBookingService {
     private PaymentInfoRepo paymentInfoRepo;
 
     @Transactional
-    public FlightBookingDTO bookFlight( FlightBookingRequest flightBookingRequest)  {
+    public FlightBookingDTO bookFlight(FlightBookingRequest flightBookingRequest) {
 
         passengerInfoRepo.save(flightBookingRequest.getPassengerInfo());
         paymentInfoRepo.save(flightBookingRequest.getPaymentInfo());
